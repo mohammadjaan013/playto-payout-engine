@@ -1,0 +1,8 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "build",
+  "framework": "create-react-app",
+  "env": {
+    "REACT_APP_API_URL": "https://your-railway-backend-url.railway.app/api/v1"
+  }
+}

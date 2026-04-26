@@ -1,0 +1,12 @@
+Django==4.2.11
+djangorestframework==3.15.1
+django-cors-headers==4.3.1
+celery==5.3.6
+redis==5.0.3
+psycopg2-binary==2.9.10
+python-decouple==3.8
+kombu==5.3.4
+django-celery-results==2.5.1
+django-celery-beat==2.6.0
+gunicorn==21.2.0
+whitenoise==6.6.0

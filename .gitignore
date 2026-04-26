@@ -1,0 +1,24 @@
+.env
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+node_modules/
+.DS_Store
+staticfiles/
+*.log
+.env.local
+.env.*.local
+# Local helper scripts (not part of submission)
+backend/add_beat_task.py
+TECHNICAL_DEEP_DIVE.md
+# Celery beat schedule file
+celerybeat-schedule
+celerybeat.pid
+
