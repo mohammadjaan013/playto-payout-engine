@@ -140,6 +140,10 @@ CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TIMEZONE = 'UTC'
 CELERY_TASK_TRACK_STARTED = True
 CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
+CELERY_BROKER_CONNECTION_RETRY_ON_STARTUP = True
+# Upstash rediss:// uses self-signed certs — disable hostname verification for broker
+if CELERY_BROKER_URL.startswith('rediss://'):
+    CELERY_BROKER_USE_SSL = {'ssl_cert_reqs': None}
 
 # Use a custom test runner that terminates stray PostgreSQL sessions before
 # dropping the test database (prevents "database is being accessed by other
