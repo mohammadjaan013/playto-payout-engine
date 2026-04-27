@@ -3,6 +3,6 @@
   "outputDirectory": "build",
   "framework": "create-react-app",
   "env": {
-    "REACT_APP_API_URL": "https://your-railway-backend-url.railway.app/api/v1"
+    "REACT_APP_API_URL": "https://playto-payout-engine-production-5514.up.railway.app/api/v1"
   }
 }
