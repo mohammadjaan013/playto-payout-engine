@@ -11,14 +11,14 @@ import django
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'playto_payout.settings')
 django.setup()
 
-from payouts.models import Merchant, BankAccount, LedgerEntry
+from payouts.models import Merchant, BankAccount, LedgerEntry, Payout, IdempotencyKey
 
 print("Seeding database...")
 
-# Clear existing data (idempotent re-runs)
-LedgerEntry.objects.all().delete()
-BankAccount.objects.all().delete()
-Merchant.objects.all().delete()
+# Skip seeding if data already exists (idempotent on Railway re-deploys)
+if Merchant.objects.exists():
+    print("Data already seeded — skipping.")
+    exit(0)
 
 # Merchant 1: Arjun's design agency
 arjun = Merchant.objects.create(

@@ -1,11 +1,4 @@
-[build]
-builder = "NIXPACKS"
-
 [deploy]
-startCommand = "gunicorn playto_payout.wsgi --bind 0.0.0.0:$PORT --workers 2 --timeout 60"
 healthcheckPath = "/api/v1/merchants/"
-healthcheckTimeout = 30
-
-[[services]]
-name = "web"
+healthcheckTimeout = 120
 source = "backend"
